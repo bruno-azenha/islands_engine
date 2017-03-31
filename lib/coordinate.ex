@@ -11,12 +11,12 @@ defmodule IslandsEngine.Coordinate do
     Agent.get(coordinate, fn state -> state.guessed? end)
   end
 
-  def in_island(coordinate) do
+  def island(coordinate) do
     Agent.get(coordinate, fn state -> state.in_island end)
   end
 
   def in_island?(coordinate) do
-    case Coordinate.in_island(coordinate) do
+    case Coordinate.island(coordinate) do
       :none -> false
       _ -> true
     end
@@ -35,7 +35,7 @@ defmodule IslandsEngine.Coordinate do
   end
 
   def to_string(coordinate) do
-    "(in_island:#{in_island(coordinate)}, guessed?:#{guessed?(coordinate)})"
+    "(in_island:#{island(coordinate)}, guessed?:#{guessed?(coordinate)})"
   end
 
 end
