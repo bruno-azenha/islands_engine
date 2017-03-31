@@ -1,0 +1,5 @@
+page 25 - code snippet agent/lib/coordinate.ex
+  string interpolation should be #{in_island(coordinate)}
+
+page 29 - Code snippet agent/lib/island.ex
+  no need to checks `Coordinate.hit?(coord)` equality with `true` 
